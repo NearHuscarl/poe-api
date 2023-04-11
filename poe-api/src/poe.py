@@ -301,6 +301,11 @@ class Client:
       message_id = message["messageId"]
 
       yield message
+
+    yield {
+      "human": human_message,
+      "bot": message,
+    }
     
     del self.active_messages[human_message_id]
     del self.message_queues[human_message_id]
